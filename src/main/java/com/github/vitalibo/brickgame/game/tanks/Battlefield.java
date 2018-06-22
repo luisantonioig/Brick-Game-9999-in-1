@@ -90,14 +90,20 @@ class Battlefield {
     }
 
     static class Spawn {
+	
+        private static List<Point> SPAWN_POINTS;
 
-        private static final List<Point> SPAWN_POINTS =
-            Arrays.asList(
-                Point.of(0, 0), Point.of(0, 7),
-                Point.of(17, 0), Point.of(17, 7));
+        public static Tank myTank(int position) {
+	    if (position == 1){
+		SPAWN_POINTS =
+		    Arrays.asList(Point.of(1,6));
+		    return point(Point.of(1, 1));
+	    }else{
+		SPAWN_POINTS =
+		    Arrays.asList(Point.of(1,1));
+		    return point(Point.of(1, 6));
+	    }
 
-        public static Tank myTank() {
-            return point(Point.of(9, 4));
         }
 
         public static List<Tank> enemyTanks() {
@@ -111,7 +117,7 @@ class Battlefield {
         }
 
         private static Tank point(Point point) {
-            return new Tank(Point.of(point), Direction.random());
+            return new Tank(Point.of(point), Direction.DOWN);
         }
 
     }

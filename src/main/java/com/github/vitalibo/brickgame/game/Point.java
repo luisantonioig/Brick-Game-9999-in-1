@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(staticName = "of")
 public final class Point implements Controllable {
 
-    private int y;
-    private int x;
+    public int y;
+    public int x;
 
     private Point(Point point) {
         this.y = point.y;

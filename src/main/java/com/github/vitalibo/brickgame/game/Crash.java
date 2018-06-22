@@ -37,12 +37,12 @@ class Crash {
     private void init(Context context) {
         final Controller controller = context.getController();
         controller.lock();
-
+	
         final Kernel kernel = context.getKernel();
         kernel.forEach((s, job) -> job.kill());
         kernel.job(this, 50, this::paint, 30, (i) ->
-            kernel.job(this, 25, this::cleanup, 20, (job) ->
-                restart(controller, context.getLife())));
+		   kernel.job(this, 25, this::cleanup, 20, (job) ->
+			      restart(controller, context.getLife())));
     }
 
     private void paint(Kernel.CountdownJob job) {

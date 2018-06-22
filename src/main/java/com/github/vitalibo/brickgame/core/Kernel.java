@@ -77,6 +77,12 @@ public class Kernel extends Timer implements Map<String, Kernel.Job> {
             super(o, milliseconds, job -> action.accept((CountdownJob) job));
             this.countdown = countdown;
             this.finalize = finalize;
+	    
+	    if (finalize == null){
+		System.out.println("finalize nulo en CountdownJob");
+	    }else{
+		System.out.println("Finalize no es nulo");
+	    }
         }
 
         @Override
@@ -88,7 +94,13 @@ public class Kernel extends Timer implements Map<String, Kernel.Job> {
             if (--countdown < 0) {
                 this.kill();
                 // TODO : fix NullPointerException
-                finalize.accept(this);
+		if (finalize == null){
+		    System.out.println("finalize nulo");
+		}
+		
+		try{
+		    finalize.accept(this);
+		}catch(NullPointerException npe){}
                 return;
             }
 

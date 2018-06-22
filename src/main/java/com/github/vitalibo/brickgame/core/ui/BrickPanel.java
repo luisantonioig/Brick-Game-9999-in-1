@@ -77,6 +77,12 @@ public class BrickPanel extends JPanel implements Canvas {
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
+	    //if (!state){
+	    //	Color color = Color.white;
+	    //}else{
+	    //	Color color = Color.black;
+	    //}
+            //Color color = state ? Color.white : Color.black;
             Color color = state ? ON : OFF;
             g.setColor(color);
             g.drawRect(0, 0, 9, 9);

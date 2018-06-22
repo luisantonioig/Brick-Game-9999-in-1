@@ -24,9 +24,9 @@ class Tank implements List<Point> {
     private final UUID uuid;
 
     @Getter
-    private Point point;
+    Point point;
     @Getter
-    private Direction direction;
+    Direction direction;
     @Delegate
     private List<Point> points;
 
@@ -94,7 +94,7 @@ class Tank implements List<Point> {
             .collect(Collectors.toList());
     }
 
-    private static int shifting(Direction dr, Direction lower, Direction upper) {
+    static int shifting(Direction dr, Direction lower, Direction upper) {
         return dr == lower ? -1 : dr == upper ? 1 : 0;
     }
 

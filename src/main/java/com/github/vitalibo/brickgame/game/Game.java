@@ -29,7 +29,7 @@ public abstract class Game implements Controllable {
     public abstract void init();
 
     public void crash(Point point) {
-        life.dec();
+        //life.dec();
 
         Crash.on(context, point);
     }

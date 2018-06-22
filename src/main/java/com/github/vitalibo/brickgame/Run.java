@@ -26,7 +26,12 @@ public class Run {
         Menu.setGames(GAMES);
     }
 
+    public static String ip;
+
     public static void main(String[] args) {
+	if (args.length > 0){
+	    ip = args[0];
+	}
         BrickGameFrame frame = new BrickGameFrame();
         Controller controller = new Controller(frame, new Kernel());
         controller.init(Menu.class);

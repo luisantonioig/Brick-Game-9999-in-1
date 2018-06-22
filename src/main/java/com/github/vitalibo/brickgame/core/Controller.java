@@ -9,11 +9,12 @@ import lombok.SneakyThrows;
 import lombok.Synchronized;
 import lombok.experimental.Delegate;
 
+import java.net.Socket;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.lang.reflect.Constructor;
 
-public class Controller extends KeyAdapter implements Controllable {
+public class Controller extends KeyAdapter implements Controllable{
 
     @Delegate(types = Controllable.class)
     private Game game;
