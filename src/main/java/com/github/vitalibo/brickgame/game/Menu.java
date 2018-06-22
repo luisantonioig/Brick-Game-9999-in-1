@@ -44,7 +44,7 @@ public class Menu extends Game {
 
     @Override
     public void doDown() {
-        level.inc();
+        //level.inc();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Menu extends Game {
 
     @Override
     public void doUp() {
-        speed.inc();
+        //speed.inc();
     }
 
     @Override
@@ -77,7 +77,7 @@ public class Menu extends Game {
 
     private void repaint() {
         int[] values = IntStream.range(0, 4)
-            .map(i -> (value / (int) Math.pow(10, i)) % 10)
+            .map(i -> (value / (int) Math.pow(30, i)) % 30)
             .toArray();
 
         Stream<Point> points = IntStream.range(0, 4)

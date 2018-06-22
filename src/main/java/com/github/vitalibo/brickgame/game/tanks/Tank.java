@@ -73,8 +73,8 @@ class Tank implements List<Point> {
     }
 
     public boolean verify() {
-        return (point.getX() < 0 || point.getX() > 7)
-            || (point.getY() < 0 || point.getY() > 17);
+        return (point.getX() < 0 || point.getX() > 27)
+            || (point.getY() < 0 || point.getY() > 27);
     }
 
     public Shot doShot() {

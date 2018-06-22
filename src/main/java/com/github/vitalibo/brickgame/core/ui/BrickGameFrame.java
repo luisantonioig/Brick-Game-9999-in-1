@@ -26,7 +26,7 @@ public class BrickGameFrame extends JFrame {
 
     public BrickGameFrame() {
         super("Brick Game");
-        this.board = new BrickPanel(10, 20);
+        this.board = new BrickPanel(30, 30);
         this.preview = new BrickPanel(4, 4);
         this.score = new NumberPanel(6);
         this.speed = new NumberPanel(2, 15);
@@ -52,7 +52,7 @@ public class BrickGameFrame extends JFrame {
         }
 
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setSize(new Dimension(190, 260));
+        this.setSize(new Dimension(350, 370));
         this.setResizable(false);
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((int) ((dimension.getWidth() - this.getWidth()) / 2),

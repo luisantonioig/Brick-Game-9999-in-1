@@ -37,6 +37,10 @@ public class BrickPanel extends JPanel implements Canvas {
 
     @Override
     public synchronized void draw(boolean[][] src) {
+	System.out.println("Tamaño: " + src.length);
+	System.out.println("Tamaño: " + src[0].length);
+	System.out.println("width: " + width);
+	System.out.println("height: " + height);
         IntStream.range(0, height)
             .forEach(h -> IntStream.range(0, width)
                 .forEach(w -> bricks[h][w].set(src[h][w])));

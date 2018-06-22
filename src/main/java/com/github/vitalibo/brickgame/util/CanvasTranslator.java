@@ -14,7 +14,7 @@ public final class CanvasTranslator {
 
     @SafeVarargs
     public static boolean[][] from(Stream<Point>... points) {
-        boolean[][] canvas = new boolean[20][10];
+        boolean[][] canvas = new boolean[30][30];
         Arrays.stream(points)
             .flatMap(stream -> stream)
             .forEach(point -> {
